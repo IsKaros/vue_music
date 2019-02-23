@@ -1,0 +1,61 @@
+@mixin border-r-1px($color) {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    border-right: 1px solid $color;
+  }
+}
+@mixin border-b-1px($color) {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    border-bottom: 1px solid $color;
+  }
+}@mixin border-t-1px($color) {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-top: 1px solid $color;
+  }
+}@mixin border-l-1px($color) {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    border-left: 1px solid $color;
+  }
+}
+@mixin bg-img($url, $size) {
+  background: url($url + '@2x.png');
+  background-size: $size;
+  @media (min-device-pixel-ratio: 3), (-webkit-min-device-pixel-ratio: 3) {
+    background: url($url + '@3x.png');
+    background-size: $size;
+  }
+}
+@mixin extend-click() {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }
+}
