@@ -1,29 +1,45 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view @changeTime="setCurrentTime"/>
+    <Player ref="player"></Player>
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+  import Player from './components/player/Player'
+  import PlayList from './components/playList/PlayList'
+  import {mapMutations,mapGetters} from 'vuex'
+  export default {
+    data(){
+      return {
+        showList:false
+      }
+    },
+    computed:{
+      ...mapGetters({currentSong:'getCurrentSong'})
+    },
+    methods:{
+      ...mapMutations(['SET_CURRENT_TIME']),
+      show(flag){
+        this.showList = flag
+      },
+      setCurrentTime(value){
+        this.$refs.player.$refs.audio.currentTime = parseInt(value/100*this.currentSong.duration/1000)
+        this.SET_CURRENT_TIME(parseInt(value/100*this.currentSong.duration/1000))
+      }
+    },
+    components:{
+      Player,
+      PlayList
     }
   }
+</script>
+<style lang="scss">
+#app {
+  position: relative;
+  width: 100vw;
+  /*overflow: hidden;*/
 }
+  .hide {
+    opacity: 0;
+  }
 </style>
