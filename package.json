@@ -11,10 +11,14 @@
     "ajv": "^6.9.1",
     "axios": "^0.18.0",
     "better-scroll": "^1.14.1",
+<<<<<<< HEAD
     "fastclick": "^1.0.6",
     "muse-ui": "^3.0.2",
     "muse-ui-carbon-theme": "^0.1.0",
     "muse-ui-loading": "^0.2.0",
+=======
+    "muse-ui": "^3.0.2",
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
     "muse-ui-toast": "^0.3.0",
     "vue": "^2.5.21",
     "vue-lazyload": "^1.2.6",

@@ -12,7 +12,10 @@ export function RecommendDailyList() {
 }
 export function RefreshLogin() {
   return axios.get(`/refresh`)
+<<<<<<< HEAD
 }
 export function RecommendMusic() {
   return axios.get('/personalized/newsong', config)
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
 }

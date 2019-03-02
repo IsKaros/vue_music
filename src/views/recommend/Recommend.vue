@@ -9,13 +9,19 @@
       </div>
     </div>
     <SongLists></SongLists>
+<<<<<<< HEAD
     <!--<LatestMusic></LatestMusic>-->
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
   </div>
 </template>
 <script>
   import Banner from '../../components/banner/Banner'
   import SongLists from './SongList'
+<<<<<<< HEAD
   import LatestMusic from './LatestMusic'
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
   export default {
     name: 'Recommend',
     data() {
@@ -25,8 +31,12 @@
     },
     components: {
       Banner,
+<<<<<<< HEAD
       SongLists,
       LatestMusic
+=======
+      SongLists
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
     }
   }
 </script>

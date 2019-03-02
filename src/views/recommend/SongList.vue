@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
   <div>
+=======
+  <div class="song-lists">
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
     <div class="title">推荐歌单</div>
     <ul class="lists">
       <li v-for="(item,index) in songLists1" :key="index" class="list" @click="goDetail(item.id)">
@@ -83,6 +87,7 @@
   }
 </script>
 <style lang="scss" scoped>
+<<<<<<< HEAD
   .title {
     padding: 2.85vh 1.20vw 1.90vh 1.20vw;
     font-size: 15px;
@@ -127,5 +132,52 @@
         color: #ccc;
       }
     }
+=======
+  .song-lists {
+    .title {
+      padding: 2.85vh 1.20vw 1.90vh 1.20vw;
+      font-size: 15px;
+      font-weight: 900;
+    }
+    .lists {
+      width: 100vw;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      .list {
+        display: inline-block;
+        position: relative;
+        margin: 0 0.5vw;
+        flex: 1;
+        vertical-align: top;
+        &:nth-of-type(3n+2) {
+          margin: 0 0.5vw;
+        }
+        .picture {
+          width: 31.80vw;
+          height: 17.66vh;
+          border-radius: 2%;
+        }
+        .desc {
+          width: 31.89vw;
+          padding: 0 1vw;
+          line-height: 28px;
+        }
+        .hearer {
+          position: absolute;
+          top: 0.5vh;
+          right: 0.5vw;
+          .icon {
+            color: rgba(234, 234, 234, 0.72);
+            margin-right: 1vw;
+          }
+          .count {
+            color: rgba(234, 234, 234, 0.72);
+          }
+        }
+      }
+    }
+
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
   }
 </style>

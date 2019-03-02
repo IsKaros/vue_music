@@ -4,7 +4,11 @@
       <mu-button icon @click="$router.go(-1)">
         <span class="icon icon-arrow_back" ></span>
       </mu-button>
+<<<<<<< HEAD
       <mu-text-field  v-model="keyWord" color='#f3a19c' underline-color="white" placeholder="Bye Bye Bye - LoveStoned" @keydown.enter="goResult" type="search" @change="getSearchSuggest">
+=======
+      <mu-text-field  v-model="keyWord" color='#f3a19c' underline-color="white" placeholder="Bye Bye Bye - LoveStoned" @keydown.enter="goResult" type="search">
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
         <span class="remove icon-remove" v-show="keyWord" @click="value=''"></span>
       </mu-text-field>
     </div>
@@ -22,8 +26,11 @@
 </template>
 <script>
   import BScroll from 'better-scroll'
+<<<<<<< HEAD
   import {searchSuggest} from "../../../public/api/search";
 
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
   export default {
     name: 'SearchResult',
     data() {
@@ -83,6 +90,7 @@
         this.tabScroll.scrollToElement($event.target, 500, true, 0)
         this.active = index
         this.$router.push({path: item.route, query:{keywords:this.keyWord}})
+<<<<<<< HEAD
       },
       goResult($event) {
         this.$router.push({name:'searchResult',query: {keywords:$event.target.value}})
@@ -92,6 +100,8 @@
         searchSuggest(keyword,'mobile').then(res => {
           console.log(res)
         })
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
       }
     },
     beforeRouteUpdate (to, from, next) {
@@ -109,7 +119,10 @@
       this.$refs.highlight.style.transform = `translateX(${this.$refs.tab[index].offsetLeft}px)`
       next()
     },
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
   }
 </script>
 <style lang="scss" >

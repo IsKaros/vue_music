@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <ul>
     <li v-for="(item,index) in comments " :key="index" class="comment">
       <div class="avatar-wrapper">
@@ -82,4 +83,14 @@
       }
     }
   }
+=======
+  <div class="comment"></div>
+</template>
+<script>
+  export default {
+    name: 'Comment'
+  }
+</script>
+<style lang="scss" scoped>
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
 </style>

@@ -1,9 +1,16 @@
 <template>
   <div class="player" v-show="showPlayer" @click="goDetail">
+<<<<<<< HEAD
     <audio :src="songUrl" ref="audio" autoplay></audio>
     <img :src="currentSong.songCover"  class="song-cover detail">
     <div class="song-detail detail">
       <div class="name">{{currentSong.name}}<span v-if="currentSong.alias">({{currentSong.alias}})</span></div>
+=======
+    <audio :src="currentSong.url" ref="audio" v-show="currentSong.url"></audio>
+    <img :src="currentSong.songCover"  class="song-cover detail">
+    <div class="song-detail detail">
+      <div class="name">{{currentSong.songName}}{{(currentSong.alias)}}</div>
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
       <div class="artist">{{currentSong.artistName}}</div>
     </div>
     <span class="mode " :class="state" @click="changeState"></span>
@@ -15,15 +22,23 @@
 </template>
 <script>
   import PlayList from '../playList/PlayList'
+<<<<<<< HEAD
   import {song} from '../../../public/api/player'
   import {mapGetters,mapMutations,mapActions} from 'vuex'
+=======
+  import {mapGetters,mapMutations} from 'vuex'
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
   export default {
     name: 'Player',
     data(){
       return {
         selfShow: false,
+<<<<<<< HEAD
         showList: false,
         songUrl: ''
+=======
+        showList: false
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
       }
     },
     created(){
@@ -40,6 +55,10 @@
           return 'icon-music_play'
         }
       },
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
     },
     watch:{
       pause(newValue){
@@ -52,12 +71,15 @@
       },
       currentIndex(newValue){
         this.$refs.audio.play()
+<<<<<<< HEAD
       },
       currentSong(newValue){
         this.getUrl()
         if(newValue.id !== ''){
           this.getUrl()
         }
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
       }
     },
     methods:{
@@ -70,6 +92,7 @@
       },
       playEnd(){
         this.$nextTick(() => {
+<<<<<<< HEAD
           this.$refs.audio.onended = async () => {
             this.$refs.audio.pause()
             if(this.playMode === '列表循环'){
@@ -88,6 +111,19 @@
               console.log(this.playList[this.currentIndex].id)
               await this.getUrl(this.playList[this.currentIndex].songId)
               this.SET_CURRENT_SONG(this.currentIndex)
+=======
+          this.$refs.audio.onended = () => {
+            this.$refs.audio.pause()
+            if(this.playMode === '列表循环'){
+              if(this.currentIndex >=this.playList.length -1){
+                this.SET_CURRENT_INDEX(0)
+                this.SET_CURRENT_SONG(0)
+              }
+              this.SET_CURRENT_INDEX(this.currentIndex+1)
+              this.SET_CURRENT_SONG(this.currentIndex)
+            }else if(this.playMode === '随机播放'){
+              this.SET_CURRENT_INDEX(parseInt(Math.random()*(this.playList.length-1)))
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
             }else if(this.playMode === '单曲循环') {
               this.$refs.audio.currentTime = 0
             }
@@ -96,12 +132,15 @@
         })
 
       },
+<<<<<<< HEAD
       getUrl(){
         song(this.currentSong.id).then(res => {
           console.log(this.currentSong.id)
           this.songUrl = res.data.data[0].url
         })
       },
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
       hideList(flag){
         this.showList = flag
       },

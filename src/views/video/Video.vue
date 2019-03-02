@@ -3,7 +3,11 @@
     <div class="video-wrapper" @click="toggleCover">
       <transition name="down">
         <div class="header" v-show="showCover">
+<<<<<<< HEAD
           <span class="icon icon-arrow_back" @click="$router.go(-1)"></span>
+=======
+          <span class="icon icon-arrow_back"></span>
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
           <div class="title">{{videoDetail.title}}</div>
           <span class="share icon-share"></span>
           <span class="more icon-more_vert"></span>
@@ -347,7 +351,10 @@
       }
       .header {
         position: absolute;
+<<<<<<< HEAD
         z-index: 10;
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
         left: 0;
         top: 3.3vh;
         width: 100vw;

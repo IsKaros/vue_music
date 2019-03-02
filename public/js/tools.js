@@ -71,6 +71,7 @@ function returnDoubleDate(time) {
 
 export function doubleDuration(time) {
   return ( '00' + time).substr(time.length)
+<<<<<<< HEAD
 }
 
 export function getArtist(arr) {
@@ -108,4 +109,6 @@ export function getCookie(name){
     if(arr[0]==name)return unescape(arr[1]); //如果是指定的cookie，则返回它的值
   }
   return "";
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
 }

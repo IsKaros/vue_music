@@ -414,6 +414,7 @@
           height: 22.13vw;
           border-radius: 4%;
         }
+<<<<<<< HEAD
 
       }
       .desc {
@@ -438,6 +439,30 @@
         overflow: hidden;
         text-overflow: ellipsis;
         color: #b1b1b1;
+=======
+        .desc {
+          flex: 1;
+          height: 22.13vw;
+          margin: 0 3.47vw 0 2.67vw;
+          padding-bottom: 1vh;
+          box-sizing: content-box;
+          @include border-b-1px(#f3f3f3);
+          .name {
+            margin-top: 3vh;
+            font-size: 18px;
+            line-height: 3vh;
+          }
+          .info {
+            margin-top: 1.5vh;
+            font-size: 12px;
+            width: 70.13vw;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #b1b1b1;
+          }
+        }
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
       }
     }
     .column-video {

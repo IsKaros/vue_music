@@ -11,7 +11,11 @@
 }
 @mixin border-b-1px($color) {
   position: relative;
+<<<<<<< HEAD
   &::after {
+=======
+  &::before {
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
     content: '';
     position: absolute;
     width: 100%;
@@ -21,7 +25,11 @@
   }
 }@mixin border-t-1px($color) {
   position: relative;
+<<<<<<< HEAD
   &::after {
+=======
+  &::before {
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
     content: '';
     position: absolute;
     width: 100%;
@@ -40,6 +48,7 @@
     border-left: 1px solid $color;
   }
 }
+<<<<<<< HEAD
 @mixin border-none() {
   position: relative;
   &::after {
@@ -51,6 +60,8 @@
     border: none;
   }
 }
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
 @mixin bg-img($url, $size) {
   background: url($url + '@2x.png');
   background-size: $size;

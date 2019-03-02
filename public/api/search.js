@@ -10,8 +10,11 @@ export function searchHot() {
 // type: 搜索类型；默认为 1 即单曲 , 取值意义 : 1: 单曲, 10: 专辑, 100: 歌手, 1000: 歌单, 1002: 用户, 1004: MV, 1006: 歌词, 1009: 电台, 1014: 视频
 export function search(keywords, type, limit,offset) {
   return axios.get('/search',{params:{keywords,type,limit,offset},...config})
+<<<<<<< HEAD
 }
 //搜索建议
 export function searchSuggest(keywords,type) {
   return axios.get('/search/suggest',{params:{keywords,type},...config})
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
 }

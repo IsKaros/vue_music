@@ -3,7 +3,11 @@
     <header>
       <span class="icon icon-arrow_back" @click="$router.go(-1)"></span>
       <div class="song-info">
+<<<<<<< HEAD
         <div class="name">{{currentSong.name}}<span v-if="currentSong.alias">({{currentSong.alias}})</span></div>
+=======
+        <div class="name">{{currentSong.songName}}<span v-if="currentSong.alias">({{currentSong.alias}})</span></div>
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
         <span class="artist">{{currentSong.artistName}} </span>
         <span class=" icon-navigate_next"></span>
       </div>

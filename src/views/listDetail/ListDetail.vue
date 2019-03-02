@@ -1,5 +1,6 @@
 <template>
   <div class="detail">
+<<<<<<< HEAD
     <div class="desc" v-if="listInfo!=={}" :style="{backgroundImage:'url('+listInfo.coverImgUrl+')'}">
       <mu-appbar class="head">
         <mu-button icon slot="left" @click="$router.go(-1)">
@@ -18,6 +19,27 @@
       <!--<span class="title">歌单详情</span>-->
       <!--<span class="search icon-search"></span>-->
       <!--<span class="more icon-more_vert" ></span>-->
+=======
+
+    <div class="desc" v-if="listInfo!=={}" :style="{backgroundImage:'url('+listInfo.coverImgUrl+')'}">
+        <mu-appbar class="head" >
+          <mu-button icon slot="left" @click="$router.go(-1)">
+            <span class="head-icon icon-arrow_back" ></span>
+          </mu-button>
+          <div>歌单详情</div>
+          <mu-button icon slot="right">
+            <span class="head-icon icon-search"></span>
+          </mu-button>
+          <mu-button icon slot="right">
+            <span class="head-icon icon-more_vert"></span>
+          </mu-button>
+        </mu-appbar>
+      <!--<header >-->
+        <!--<span class="back icon-arrow_back"></span>-->
+        <!--<span class="title">歌单详情</span>-->
+        <!--<span class="search icon-search"></span>-->
+        <!--<span class="more icon-more_vert" ></span>-->
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
       <!--</header>-->
       <div class="big-wrapper">
         <div class="cover">
@@ -38,6 +60,10 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
       <div class="choices">
         <div class="choice">
           <div class="icon icon-comments"></div>
@@ -89,6 +115,10 @@
   import {listDetail} from "../../../public/api/songList";
   import {mapGetters, mapActions, mapMutations} from 'vuex'
   import {formateCount} from "../../../public/js/tools";
+<<<<<<< HEAD
+=======
+  import {album} from "../../../public/api/player";
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
 
   export default {
     name: 'ListDetail',
@@ -111,7 +141,11 @@
       })
     },
     computed: {
+<<<<<<< HEAD
       ...mapGetters({playList: 'getPlayList',currentSong:'getCurrentSong'})
+=======
+      ...mapGetters({playList: 'getPlayList'})
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
     },
     filters: {
       count(count) {
@@ -119,6 +153,7 @@
       }
     },
     methods: {
+<<<<<<< HEAD
       ...mapMutations(['SET_CURRENT_SONG', 'ADD_LIST','SET_CURRENT_INDEX', 'SET_PAUSE', 'SET_SHOW_PLAYER']),
       ...mapActions(['addList', 'addSong', 'setList']),
       playAll() {
@@ -132,6 +167,16 @@
       },
       async playSong(id) {
         var index = this.playList.length
+=======
+      ...mapMutations(['SET_CURRENT_SONG', 'SET_CURRENT_INDEX','SET_PAUSE']),
+      ...mapActions(['addList', 'addSong']),
+      playAll() {
+        this.addList({id: this.$route.params.id, flag: this.isAdd})
+        this.isAdd = true
+        this.SET_PAUSE(false)
+      },
+      playSong(id) {
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
         for (let i in this.playList) {
           if (this.playList[i].id === id) {
             this.SET_CURRENT_SONG(i)
@@ -139,10 +184,14 @@
             return
           }
         }
+<<<<<<< HEAD
         await this.addSong(id)
         this.SET_CURRENT_SONG(index)
         this.SET_CURRENT_INDEX(parseInt(index))
 
+=======
+        this.addSong(id)
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
       }
     }
   }
@@ -165,7 +214,11 @@
         width: 34.13vw;
         height: 34.13vw;
         z-index: 4;
+<<<<<<< HEAD
         margin: 5.1vw 0 0 5.1vw;
+=======
+        margin: 5.1vw 0  0 5.1vw;
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
       }
       img {
         width: 34.13vw;
@@ -238,18 +291,28 @@
       }
     }
   }
+<<<<<<< HEAD
 
   .head {
     width: 100vw !important;
     /*height: 7.2vh;*/
     background-color: rgba(255, 255, 255, 0.1);
+=======
+  .head {
+    width: 100vw!important;
+    /*height: 7.2vh;*/
+    background-color: rgba(255,255,255,0.1);
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
     box-shadow: none;
     .head-icon {
       color: #d2d2d2;
       font-size: 24px;
     }
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5d50508479b1b4623bdd1bc06468e3029a6a8a2f
   .song-list {
     box-sizing: border-box;
     border-radius: 10px;
